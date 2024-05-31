@@ -73,7 +73,7 @@ public class HttpHandler {
             System.out.println("Error: " + e.getCause());
         }
         finally {
-            resetRequestString();     //reset string for future requests
+            resetRequestString();     //Every time a request is sent either correctly or wrongly, it resets URI string for future requests
         }
         return (JSONObject) JSONValue.parse(response.body());
     }
@@ -98,7 +98,7 @@ public class HttpHandler {
             for (Object o : JS0Nlist) {
                 //Get a single JSONObject from the JSONArray
                 JSONObject movieJson = (JSONObject) o;
-                //Add a new movie that sets it's attributes from the JSONObject values
+                //Add a new movie that sets its attributes from the JSONObject values
                 result.add(new Movie(movieJson));
             }
         }
@@ -112,6 +112,7 @@ public class HttpHandler {
         JSONObject returnedJson = submitRequest();
         //Return new anonymous Fullmovie object -> will be displayed on alert pop up
         return new Fullmovie(returnedJson);
+        //URI reset performed by submitRequest();
     }
     public StringBuilder getRequestString() {
         return requestString;
