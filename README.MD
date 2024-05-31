@@ -2,10 +2,10 @@
 
 <p align="center">
     <a href="https://github.com/Gianlu03">
-        <img src="Guide/images/gianlucaravaglia.jpg" width="200" height="200" title="gianlucaRavaglia propic">
+        <img src="https://avatars.githubusercontent.com/u/101069296?v=4" width="200" height="200" title="gianlucaRavaglia propic">
     </a>
     <a href="https://github.com/BertocchiLuca">
-        <img src="Guide/images/lucabertocchi.png" width="200" height="200" alt="Luca Bertocchi propic">
+        <img src="https://avatars.githubusercontent.com/u/101472042?v=4" width="200" height="200" alt="Luca Bertocchi propic">
     </a>
 </p>
 
