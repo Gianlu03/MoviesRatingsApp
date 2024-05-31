@@ -1,5 +1,6 @@
 package org.example.moviesratingsapp;
 
+import org.example.moviesratingsapp.model.Fullmovie;
 import org.example.moviesratingsapp.model.Movie;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -104,6 +105,14 @@ public class HttpHandler {
         return result;
     }
 
+    public Movie fullMovieRequest(String imdbID){
+        //Add the id to the request string to retreive the full movie data
+        this.requestString.append("i=").append(imdbID);
+        //Send the request with the URI built: receives a JSON with the full data
+        JSONObject returnedJson = submitRequest();
+        //Return new anonymous Fullmovie object -> will be displayed on alert pop up
+        return new Fullmovie(returnedJson);
+    }
     public StringBuilder getRequestString() {
         return requestString;
     }
