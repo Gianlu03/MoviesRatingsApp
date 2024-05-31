@@ -73,6 +73,14 @@ public class MovieController implements Initializable {
 
 
          */
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
+        yearColumn.setCellValueFactory(new PropertyValueFactory<>("year"));
+        identifierColumn.setCellValueFactory(new PropertyValueFactory<>("imdbID"));
+        typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
         submitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -89,16 +97,8 @@ public class MovieController implements Initializable {
                 }
                 movieTable.setItems(list);
             }
-
         });
-    }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
-        yearColumn.setCellValueFactory(new PropertyValueFactory<>("year"));
-        identifierColumn.setCellValueFactory(new PropertyValueFactory<>("imdbID"));
-        typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
     }
 
 }

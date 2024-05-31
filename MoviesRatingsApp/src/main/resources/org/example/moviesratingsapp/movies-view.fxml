@@ -20,7 +20,8 @@
    <TextField fx:id="filterStringInput" layoutX="12.0" layoutY="78.0" prefHeight="40.0" prefWidth="289.0" promptText="Title" AnchorPane.bottomAnchor="492.0" AnchorPane.topAnchor="78.0">
       <font>
          <Font size="14.0" />
-      </font></TextField>
+      </font>
+   </TextField>
    <Text layoutX="14.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the title:" wrappingWidth="191.6502799987793">
       <font>
          <Font name="Arial" size="24.0" />
