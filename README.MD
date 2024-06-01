@@ -34,4 +34,3 @@ See our <a href="Guide/GetStarted.md">guide</a> to discover how we reached our g
     </a>
 </p>
 
----
