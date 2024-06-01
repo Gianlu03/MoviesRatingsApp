@@ -5,15 +5,15 @@ Free choice Java project to pass the exam "Object Oriented Programming" - UNIMOR
 AIM: create a program with GUI which allows the user to search for a movie's name and displays information regarding that item.
 The movies' information are retrieved through the OMDb API, a RESTful web service mantained and expanded by its users.
 
-### SOFTWARE
+### SOFTWARE 💻🔨
 * [JDK Development Kit 21](https://www.oracle.com/it/java/technologies/downloads/)
 * [IntelliJ IDEA](https://www.jetbrains.com/idea/)
-* [Scene Builder](https://gluonhq.com/products/scene-builder/) 🔨
+* [Scene Builder](https://gluonhq.com/products/scene-builder/) 
 
-### USEFUL LINKS
-* [OMDb API](https://www.omdbapi.com/) 🎬
-* [json.simple modules](https://www.javatpoint.com/java-json-example) 🙌
-* [http request modules](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html) 💻
+### USEFUL LINKS 🙌🎬
+* [OMDb API](https://www.omdbapi.com/) 
+* [json.simple modules](https://www.javatpoint.com/java-json-example) 
+* [http request modules](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html) 
 
 <br>
 See our <a href="Guide/GetStarted.md">guide</a> to discover how we reached our goal and understand the code better. Hope you like it!
