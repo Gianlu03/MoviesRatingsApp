@@ -20,3 +20,9 @@ Try pasting the following link on your browser substituting `[mykey]` with the K
 `http://www.omdbapi.com/?apikey=[mykey]&t=batman`
 
 If everything has worked correctly, you'll see a JSON structure containing information about the film "Batman" from 1989.
+
+---
+
+### Jump to next section -> [2-Classes](2-Classes.md)
+
+---

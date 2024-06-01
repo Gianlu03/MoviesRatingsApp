@@ -39,10 +39,16 @@ public final class Fullmovie extends Movie{
 }
 ```
 
-The division into two classes is due to the fact that the quantity of information retrieved depends on the search parameter. A request for a single item(by `title` or `IMDbID`) returns all its' details, unlike a request for multiple items(by `title`), which provides only essential information(`title`, `year`, `type` and `IMDbID`).
+The division into two classes is due to the fact that the quantity of information retrieved depends on the search parameter. A request for a single item(by `title` or `IMDbID`) returns all its' details, unlike a request for multiple items(by `title`), which provides only essential information(`title`, `year`, `type`,`IMDbID` and `poster`).
 
 Therefore, the `Movie` class contains what is returned by a multiple request, whereas `FullMovie` what is received from a single(detailed) request.
 
 ---
 
 WORK IN PROGRESS...
+
+---
+
+### Jump to next section -> [3]()
+
+---
