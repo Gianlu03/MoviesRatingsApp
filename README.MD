@@ -8,7 +8,9 @@ The movies' information are retrieved through the OMDb API, a RESTful web servic
 ### SOFTWARE 💻🔨
 * [JDK Development Kit 21](https://www.oracle.com/it/java/technologies/downloads/)
 * [IntelliJ IDEA](https://www.jetbrains.com/idea/)
+* [Maven](https://maven.apache.org/)
 * [Scene Builder](https://gluonhq.com/products/scene-builder/) 
+
 
 ### USEFUL LINKS 🙌🎬
 * [OMDb API](https://www.omdbapi.com/) 
