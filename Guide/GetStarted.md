@@ -7,7 +7,7 @@ Click on the “API Key” section inside the navbar.
 
 ![OMDBSite image](images/OMDBSite.png)
 
-Choose the “FREE! (1,000 daily limit)” option and fill the form. It is required to fill all the fields.
+Choose the “FREE! (1,000 daily limit)” option and fill the form. It is required to fill all the shown fields.
 
 ![OMDBform image](images/OMDBform.png)
 
