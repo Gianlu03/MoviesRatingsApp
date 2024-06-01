@@ -43,12 +43,12 @@ The division into two classes is due to the fact that the quantity of informatio
 
 Therefore, the `Movie` class contains what is returned by a multiple request, whereas `FullMovie` what is received from a single(detailed) request.
 
----
+##
 
 WORK IN PROGRESS...
 
----
+##
 
 ### Jump to next section -> [3]()
 
----
+##
