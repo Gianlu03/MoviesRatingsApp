@@ -3,7 +3,7 @@
 
 Free choice Java project in pair to pass the exam "Object Oriented Programming" - UNIMORE(Italy)
  
->### AIM: create a program with GUI which allows the user to search for a movie's name and displays the main information regarding the items that match with the inserted parameter. Clicking on one of the shown pieces exhibits further details about it. 
+>### AIM: to create a program with GUI which allows the user to search for a movie's name and displays the main information regarding the items that match with the inserted parameter. Clicking on one of the shown pieces exhibits further details about it. 
 The movies' information are retrieved through the OMDb API, a RESTful web service mantained and expanded by its users.
 
 
@@ -21,7 +21,7 @@ The movies' information are retrieved through the OMDb API, a RESTful web servic
 * [http request modules](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html) 
 
 <br>
-See our <a href="Guide/GetStarted.md">guide</a> to discover how we reached our goal and understand the code better. Hope you like it!
+See our <a href="Guide/1-GetStarted.md">guide</a> to discover how we reached our goal and understand the code better. Hope you like it!
 
 
 
