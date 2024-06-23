@@ -75,7 +75,7 @@ public class MovieController implements Initializable {
             public void handle(MouseEvent mouseEvent) {
                 //Get the selected movie from the table
                 Movie selectedMovie = movieTable.getSelectionModel().getSelectedItem();
-                if(selectedMovie != null){
+                if(selectedMovie != null) {
                     //Show the movie's data in a dialog
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Full Movie Information");
