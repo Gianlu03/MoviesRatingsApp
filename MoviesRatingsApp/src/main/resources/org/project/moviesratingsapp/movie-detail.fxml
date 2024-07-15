@@ -1,13 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.project.moviesratingsapp.controller.MovieDetailController"
-            prefHeight="400.0" prefWidth="600.0">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.project.moviesratingsapp.controller.MovieDetailController">
+   <children>
+      <TextField fx:id="genre" editable="false" focusTraversable="false" layoutX="190.0" layoutY="146.0" prefHeight="26.0" prefWidth="340.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="70.79999999999995" AnchorPane.topAnchor="146.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="director" editable="false" focusTraversable="false" layoutX="190.0" layoutY="98.0" prefHeight="26.0" prefWidth="340.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="70.79999999999995" AnchorPane.topAnchor="98.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="country" editable="false" focusTraversable="false" layoutX="190.0" layoutY="198.0" prefHeight="26.0" prefWidth="340.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="70.79999999999995" AnchorPane.topAnchor="198.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="imdbRating" editable="false" focusTraversable="false" layoutX="190.0" layoutY="246.0" prefWidth="340.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="70.79999999999995">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="metascore" editable="false" focusTraversable="false" layoutX="190.0" layoutY="297.0" prefWidth="340.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="70.79999999999995" AnchorPane.topAnchor="297.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="runtime" editable="false" focusTraversable="false" layoutX="190.0" layoutY="346.0" prefWidth="340.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="70.79999999999995" AnchorPane.topAnchor="346.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="language" editable="false" focusTraversable="false" layoutX="190.0" layoutY="397.0" prefWidth="340.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="70.79999999999995" AnchorPane.topAnchor="397.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Text layoutX="70.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Director:" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="468.35205078125">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="70.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genre:" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="483.99658203125">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="70.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Country:" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="469.37744140625">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="70.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IMDB Rating:" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="435.68603515625">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="70.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Metascore:" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="452.50244140625">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="70.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Runtime:" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="466.03759765625">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="70.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Languages:" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="450.68603515625">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="title" layoutX="37.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TITOLO" textAlignment="CENTER" wrappingWidth="724.0000309944153" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="38.99996900558472">
+         <font>
+            <Font name="System Bold Italic" size="22.0" />
+         </font>
+      </Text>
+   </children>
 </AnchorPane>

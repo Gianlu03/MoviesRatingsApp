@@ -1,4 +1,4 @@
-package org.example.moviesratingsapp.model;
+package org.project.moviesratingsapp.model;
 
 import org.json.simple.JSONObject;
 

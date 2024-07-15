@@ -8,35 +8,41 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.moviesratingsapp.controller.MovieController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.project.moviesratingsapp.controller.MovieController">
    <center>
-      <SplitPane dividerPositions="0.36622073578595316" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-min-width: 250px; -fx-max-width: 400px;">
-               <children>
-                  <TextField alignment="CENTER" editable="false" layoutX="7.0" layoutY="85.0" style="-fx-font-size: 22px; -fx-border-color: black;" text="INSERT A TITLE" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
-                  <TextField fx:id="filterString" alignment="CENTER" layoutX="55.0" layoutY="142.0" promptText="Write here" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="55.0" />
-                  <Button fx:id="submitButton" layoutX="99.0" layoutY="192.0" mnemonicParsing="false" text="SEARCH" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="90.0" />
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-               <children>
-                  <TableView fx:id="movieTable" prefHeight="348.0" prefWidth="296.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <columns>
-                      <TableColumn fx:id="titleColumn" prefWidth="75.0" text="Title" />
-                      <TableColumn fx:id="yearColumn" prefWidth="75.0" text="Year" />
-                        <TableColumn fx:id="typeColumn" prefWidth="75.0" text="type" />
-                        <TableColumn fx:id="identifierColumn" prefWidth="75.0" text="identifier" />
-                    </columns>
-                     <columnResizePolicy>
-                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                     </columnResizePolicy>
-                  </TableView>
-               </children>
-            </AnchorPane>
-        </items>
-      </SplitPane>
+       <SplitPane dividerPositions="0.36622073578595316" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-min-width: 250px; -fx-max-width: 400px;">
+               <TextField fx:id="filterString" alignment="CENTER" layoutX="55.0" layoutY="213.0" promptText="Write here" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="55.39999999999998">
+               <font>
+                  <Font size="16.0" />
+               </font></TextField>
+               <Button fx:id="submitButton" layoutX="99.0" layoutY="283.0" mnemonicParsing="false" text="SEARCH" AnchorPane.leftAnchor="99.0" AnchorPane.rightAnchor="101.79999999999998">
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+            <Text layoutX="40.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ENTER A TITLE" textAlignment="CENTER" wrappingWidth="243.58277082443237" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="42.817229175567604">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Text>
+           </AnchorPane>
+           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <TableView fx:id="movieTable" disable="true" prefHeight="348.0" prefWidth="296.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                   <columns>
+                       <TableColumn fx:id="titleColumn" prefWidth="75.0" text="Title" />
+                       <TableColumn fx:id="yearColumn" prefWidth="75.0" text="Year" />
+                       <TableColumn fx:id="typeColumn" prefWidth="75.0" text="type" />
+                       <TableColumn fx:id="identifierColumn" prefWidth="75.0" text="identifier" />
+                   </columns>
+                   <columnResizePolicy>
+                       <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                   </columnResizePolicy>
+               </TableView>
+           </AnchorPane>
+       </SplitPane>
    </center>
    <bottom>
       <Pane prefHeight="25.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />

@@ -1,4 +1,4 @@
-package org.example.moviesratingsapp;
+package org.project.moviesratingsapp;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -30,10 +30,11 @@ public class App extends Application {
          */
 
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("movies-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 610);
+        Scene scene = new Scene(fxmlLoader.load(), 900, 600);
         stage.setTitle("Movies Ratings App");
         stage.getIcons().add(new Image(Objects.requireNonNull(App.class.getResourceAsStream("images/icon.png"))));
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 

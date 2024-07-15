@@ -1,17 +1,26 @@
-package org.example.moviesratingsapp.controller;
+package org.project.moviesratingsapp.controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
-import org.example.moviesratingsapp.HttpHandler;
-import org.example.moviesratingsapp.model.Movie;
+import javafx.stage.Stage;
+import org.project.moviesratingsapp.App;
+import org.project.moviesratingsapp.HttpHandler;
+import org.project.moviesratingsapp.model.FullMovie;
+import org.project.moviesratingsapp.model.Movie;
 
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class MovieController implements Initializable {
@@ -43,7 +52,7 @@ public class MovieController implements Initializable {
     @FXML
     private Button submitButton;
 
-    HttpHandler handler = new HttpHandler("feb7be56");
+    private final HttpHandler handler = new HttpHandler("feb7be56");
 
     ObservableList<Movie> list = FXCollections.observableArrayList();
 
@@ -57,33 +66,50 @@ public class MovieController implements Initializable {
         submitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
+                String filter = filterString.getText().trim();
                 //Set the observableArrayList with the filtered movies, the filter string is retrieved from the textfield
-                list = FXCollections.observableArrayList(handler.filteredRequest(filterString.getText()));
+                if(filter.isEmpty())
+                    return;
+                list = FXCollections.observableArrayList(handler.filteredRequest(filter));
                 //update the table with the new list
                 if(list.isEmpty()){
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Information Dialog");
                     alert.setHeaderText(null);
-                    alert.setContentText(new StringBuilder("No movies found with the filter: ").append(filterString.getText()).toString());
+                    alert.setContentText("No movies found with the filter: " + filterString.getText());
                     alert.showAndWait();
-                }
+                    movieTable.setDisable(true);
+                } else
+                    movieTable.setDisable(false);
                 movieTable.setItems(list);
             }
         });
         movieTable.setOnMouseClicked(new EventHandler<MouseEvent>(){
             @Override
             public void handle(MouseEvent mouseEvent) {
-                //Get the selected movie from the table
                 Movie selectedMovie = movieTable.getSelectionModel().getSelectedItem();
-                if(selectedMovie != null) {
-                    //Show the movie's data in a dialog
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Full Movie Information");
+                if(selectedMovie == null)
+                    return;
+                FullMovie requestedMovie = handler.fullMovieRequest(selectedMovie.getImdbID());
+                try{
+                    FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("movie-detail.fxml"));
+                    Parent root = (Parent) fxmlLoader.load();
+                    Stage newStage = new Stage();
+                    newStage.setTitle("Details of: \"" + selectedMovie.getTitle() + "\"");
+                    newStage.setScene(new Scene(root));
+                    newStage.getIcons().add(new Image(Objects.requireNonNull(App.class.getResourceAsStream("images/icon.png"))));
+                    newStage.setResizable(false);
+                    newStage.show();
+                    MovieDetailController controller = fxmlLoader.getController();
+                    controller.fill(requestedMovie);
+                }catch(Exception e){
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error Dialog");
                     alert.setHeaderText(null);
-                    //Set the content of the dialog with the full movie data retreived through the handler fullMovieRequest method
-                    alert.setContentText(handler.fullMovieRequest(selectedMovie.getImdbID()).toString());
+                    alert.setContentText("An error occurred while trying to display the movie details.");
                     alert.showAndWait();
                 }
+
             }
         });
     }

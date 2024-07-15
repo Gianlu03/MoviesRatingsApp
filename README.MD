@@ -20,7 +20,7 @@ The movies' information are retrieved through the OMDb API, a RESTful web servic
 * [json.simple modules](https://www.javatpoint.com/java-json-example) 
 * [http request modules](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html) 
 
-<br>
+<br/>
 See our <a href="MoviesRatingsApp/Guide/1-GetStarted.md">guide</a> to discover how we reached our goal and understand the code better. Hope you like it!
 
 

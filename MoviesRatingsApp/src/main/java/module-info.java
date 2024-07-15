@@ -19,10 +19,10 @@ module org.example.moviesratingsapp {
      */
     requires java.net.http;
 
-    opens org.example.moviesratingsapp to javafx.fxml;
-    exports org.example.moviesratingsapp;
-    exports org.example.moviesratingsapp.controller;
-    opens org.example.moviesratingsapp.controller to javafx.fxml;
-    exports org.example.moviesratingsapp.model;
-    opens org.example.moviesratingsapp.model to javafx.fxml;
+    opens org.project.moviesratingsapp to javafx.fxml;
+    exports org.project.moviesratingsapp;
+    exports org.project.moviesratingsapp.controller;
+    opens org.project.moviesratingsapp.controller to javafx.fxml;
+    exports org.project.moviesratingsapp.model;
+    opens org.project.moviesratingsapp.model to javafx.fxml;
 }
