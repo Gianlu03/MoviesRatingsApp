@@ -22,15 +22,15 @@ import java.util.ArrayList;
 
 public class HttpHandler {
 
-    /** the key used to authenticate the user. */
+    /** The key used to authenticate the user. */
     String APIkey;
-    /** the string used to build the URI. */
+    /** The string used to build the URI. */
     StringBuilder requestString;
-    /** the HttpClient object used to send the request. */
+    /** The HttpClient object used to send the request. */
     HttpClient client;
-    /** the HttpRequest object used to build the request. */
+    /** The HttpRequest object used to build the request. */
     HttpRequest request;
-    /** the HttpResponse object used to store the response. */
+    /** The HttpResponse object used to store the response. */
     HttpResponse<String> response;
 
     /**

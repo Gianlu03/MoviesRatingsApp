@@ -23,16 +23,6 @@ import java.util.ResourceBundle;
 
 /**
  * Controller class for the Movie View.
- * The class has the following attributes:
- * movieTable: the TableView object that displays the movies
- * titleColumn: the TableColumn object that displays the movie's title
- * yearColumn: the TableColumn object that displays the movie's year
- * identifierColumn: the TableColumn object that displays the movie's identifier
- * typeColumn: the TableColumn object that displays the movie's type
- * filterString: the TextField object that contains the filter string
- * submitButton: the Button object that submits the filter string
- * handler: the HttpHandler object that handles the API requests
- * list: the ObservableList object that contains the movies
  * */
 
 public class MovieController implements Initializable {

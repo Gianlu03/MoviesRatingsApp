@@ -26,7 +26,7 @@ public final class FullMovie extends Movie {
     private boolean response = false;
 
     /**
-     * Constructor with JsonObject parameter.
+     * Constructor with JsonObject parameter.<br>
      * Sets the attributes to the entity values returned by API.
      * @param decodedJson the JSONObject that contains the data to be set in the attributes
      * */
@@ -48,7 +48,7 @@ public final class FullMovie extends Movie {
     }
 
     /**
-     * Sets the metascore attribute
+     * Sets the metascore attribute.
      * @param metascore the metascore to be set
      */
     public void setMetascore(String metascore) {
