@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 /**
- * The main class of the application.
+ * The main class of the application.<br>
  * The class extends the Application class and overrides the start method.
  */
 public class App extends Application {

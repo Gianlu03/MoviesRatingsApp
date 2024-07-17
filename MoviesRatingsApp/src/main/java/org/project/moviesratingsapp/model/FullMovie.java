@@ -8,26 +8,26 @@ import org.json.simple.JSONObject;
 
 public final class FullMovie extends Movie {
 
-    /** the movie's runtime. */
+    /** The movie's runtime. */
     private String runtime = "N/A";
-    /** the movie's genre. */
+    /** The movie's genre. */
     private String genre = "N/A";
-    /** the movie's director. */
+    /** The movie's director. */
     private String director = "N/A";
-    /** the movie's language. */
+    /** The movie's language. */
     private String language = "N/A";
-    /** the movie's country. */
+    /** The movie's country. */
     private String country = "N/A";
-    /** the movie's metascore. */
+    /** The movie's metascore. */
     private String metascore = "N/A";
-    /** the movie's IMDb rating. */
+    /** The movie's IMDb rating. */
     private String imdbRating = "N/A";
-    /** the request's response. */
+    /** The request's response. */
     private boolean response = false;
 
     /**
-     * Constructor with JsonObject parameter
-     * Sets the attributes to the entity values returned by API
+     * Constructor with JsonObject parameter.
+     * Sets the attributes to the entity values returned by API.
      * @param decodedJson the JSONObject that contains the data to be set in the attributes
      * */
 
@@ -56,13 +56,13 @@ public final class FullMovie extends Movie {
     }
 
     /**
-     * Sets the response attribute
+     * Sets the response attribute.
      * @param response the response to be set
      */
     public void setResponse(String response) { this.response = response.equals("True");}
 
     /**
-     * Sets the runtime attribute
+     * Sets the runtime attribute.
      * @param runtime the runtime to be set
      */
     public void setRuntime(String runtime) {
@@ -70,7 +70,7 @@ public final class FullMovie extends Movie {
     }
 
     /**
-     * Sets the genre attribute
+     * Sets the genre attribute.
      * @param genre the genre to be set
      */
     public void setGenre(String genre) {
@@ -78,7 +78,7 @@ public final class FullMovie extends Movie {
     }
 
     /**
-     * Sets the director attribute
+     * Sets the director attribute.
      * @param director the director to be set
      */
     public void setDirector(String director) {
@@ -86,7 +86,7 @@ public final class FullMovie extends Movie {
     }
 
     /**
-     * Sets the language attribute
+     * Sets the language attribute.
      * @param language the language to be set
      */
     public void setLanguage(String language) {
@@ -94,7 +94,7 @@ public final class FullMovie extends Movie {
     }
 
     /**
-     * Sets the country attribute
+     * Sets the country attribute.
      * @param country the country to be set
      */
     public void setCountry(String country) {
@@ -102,7 +102,7 @@ public final class FullMovie extends Movie {
     }
 
     /**
-     * Sets the imdbRating attribute
+     * Sets the imdbRating attribute.
      * @param imdbRating the imdbRating to be set
      */
     public void setImdbRating(String imdbRating) {
@@ -110,7 +110,7 @@ public final class FullMovie extends Movie {
     }
 
     /**
-     * Gets the metascore attribute
+     * Gets the metascore attribute.
      * @return the runtime attribute
      */
     public String getRuntime() {
@@ -118,7 +118,7 @@ public final class FullMovie extends Movie {
     }
 
     /**
-     * Gets the genre attribute
+     * Gets the genre attribute.
      * @return the genre attribute
      */
     public String getGenre() {
@@ -126,7 +126,7 @@ public final class FullMovie extends Movie {
     }
 
     /**
-     * Gets the director attribute
+     * Gets the director attribute.
      * @return the director attribute
      */
     public String getDirector() {
@@ -134,7 +134,7 @@ public final class FullMovie extends Movie {
     }
 
     /**
-     * Gets the language attribute
+     * Gets the language attribute.
      * @return the language attribute
      */
     public String getLanguage() {
@@ -142,7 +142,7 @@ public final class FullMovie extends Movie {
     }
 
     /**
-     * Gets the country attribute
+     * Gets the country attribute.
      * @return the country attribute
      */
     public String getCountry() {
@@ -150,7 +150,7 @@ public final class FullMovie extends Movie {
     }
 
     /**
-     * Gets the metascore attribute
+     * Gets the metascore attribute.
      * @return the metascore attribute
      */
     public String getMetascore() {
@@ -158,7 +158,7 @@ public final class FullMovie extends Movie {
     }
 
     /**
-     * Gets the imdbRating attribute
+     * Gets the imdbRating attribute.
      * @return the imdbRating attribute
      */
     public String getImdbRating() {
@@ -166,7 +166,7 @@ public final class FullMovie extends Movie {
     }
 
     /**
-     * Gets the response attribute
+     * Gets the response attribute.
      * @return the response attribute
      */
     public boolean isResponse() {

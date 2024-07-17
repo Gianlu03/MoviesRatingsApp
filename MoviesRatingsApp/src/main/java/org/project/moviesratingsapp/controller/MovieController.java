@@ -37,42 +37,42 @@ import java.util.ResourceBundle;
 
 public class MovieController implements Initializable {
 
-    /** the TableView object that displays the movies */
+    /** The TableView object that displays the movies. */
     @FXML
     private TableView<Movie> movieTable;
 
-    /** the TableColumn object that displays the movie's title */
+    /** The TableColumn object that displays the movie's title. */
     @FXML
     private TableColumn<Movie, String> titleColumn;
 
-    /** the TableColumn object that displays the movie's year */
+    /** The TableColumn object that displays the movie's year. */
     @FXML
     private TableColumn<Movie, String> yearColumn;
 
-    /** the TableColumn object that displays the movie's identifier */
+    /** The TableColumn object that displays the movie's identifier. */
     @FXML
     private TableColumn<Movie, String> identifierColumn;
 
-    /** the TableColumn object that displays the movie's type */
+    /** The TableColumn object that displays the movie's type. */
     @FXML
     private TableColumn<Movie, String> typeColumn;
 
-    /** the TextField object that contains the filter string */
+    /** The TextField object that contains the filter string. */
     @FXML
     private TextField filterString;
 
-    /** the Button object that submits the filter string */
+    /** The Button object that submits the filter string. */
     @FXML
     private Button submitButton;
 
-    /** the HttpHandler object that handles the API requests */
+    /** The HttpHandler object that handles the API requests. */
     private final HttpHandler handler = new HttpHandler("feb7be56");
 
-    /** the ObservableList object that contains the movies */
+    /** The ObservableList object that contains the movies. */
     ObservableList<Movie> list = FXCollections.observableArrayList();
 
     /**
-     * Method that creates an Alert object with the specified title, header and content.
+     * Method that creates an Alert object with the specified title, header and content.<br>
      * The method sets the icon of the Alert window to the application's icon.
      * @param title the title of the Alert
      * @param header the header of the Alert
@@ -96,8 +96,8 @@ public class MovieController implements Initializable {
 
     /**
      * Method that initializes the TableView with the data from the API.
-     * The method initializes the columns with the respective attributes from the Movie class.
-     * The method sets the action for the submit button, which filters the movies according to the filter string.
+     * The method initializes the columns with the respective attributes from the Movie class.<br>
+     * The method sets the action for the submit button, which filters the movies according to the filter string.<br>
      * It also sets the action for the TableView, which opens a new window with the movie's details.
      * @param url the URL to be initialized
      * @param resourceBundle the ResourceBundle to be initialized
@@ -111,11 +111,9 @@ public class MovieController implements Initializable {
 
         submitButton.setOnMouseClicked(mouseEvent -> {
             String filter = filterString.getText().trim();
-            //Set the observableArrayList with the filtered movies, the filter string is retrieved from the textfield
             if(filter.isEmpty())
                 return;
             list = FXCollections.observableArrayList(handler.filteredRequest(filter));
-            //update the table with the new list
             if(list.isEmpty()){
                 Alert alert = getAlert("A message for you...",
                         "Ops! No movies found",
