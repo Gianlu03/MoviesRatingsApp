@@ -6,8 +6,8 @@ Let's see the definition of this class:
 
 ```java
     public class HttpHandler {
-        String APIkey = "";
-        StringBuilder requestString = new StringBuilder("https://www.omdbapi.com/?");
+        String APIkey;
+        StringBuilder requestString;
         HttpClient client;
         HttpRequest request;
         HttpResponse<String> response;
@@ -16,7 +16,6 @@ Let's see the definition of this class:
 * `APIkey`: the APIkey used to access the database(set by the constructor). 
 * `requestString`: a String containing the HTTP request we build step by step and getting ready to send
 * `HttpClient`, `HttpRequest` `HttpResponse` are three elements of the http package, all of them are used to prepare the connection, send a request and receive the response from a URL.
-
 ##
 
 Let us take a look to the constructor, it only takes the APIkey as parameter:
@@ -48,7 +47,7 @@ public void resetRequestString(){
 }
 ```
 
-resets the URL to the original form: link to the site followed by the APIkey. We use
+resets the URL to its original form: link to the site followed by the APIkey. We use
 this method after every request succesfully sent.
 
 ##
@@ -66,17 +65,17 @@ public JSONObject submitRequest()  {
         System.out.println("Error: " + e.getCause());
     }
     finally {
-        resetRequestString();     //Every time a request is sent either correctly or wrongly, it resets URI string for future requests
+        resetRequestString();
     }
     return (JSONObject) JSONValue.parse(response.body());
 }
 
 ```
-Finally, we use `submitRequest()` to send the accomplished request to OMDB. We check for the possible exceptions
+At the end of each request method, we use `submitRequest()` to send the accomplished request to OMDb. We check for the possible exceptions
 while the client object sends the request.
-Every time the `try` block executes, the `finally` block resets `requestString` thanks to the previous method.
+Every time the `try` block executes, the `finally` block resets `requestString` thanks to `resetRequestString()`.
 
-In the end, We return a JSONObject parsing the body of the response obtained. We will be able to fetch the data.
+In the end, we return a JSONObject parsing the body of the response obtained. We will be able to fetch the data.
 
 ## 
 
@@ -104,9 +103,9 @@ public ArrayList<Movie> filteredRequest(String filter){
 
 `filteredRequest(String filter)` prepares a requestString with the `s=title` parameter, this kind of request receives more than one film that match with the parameter. 
 
-It also replaces blank spaces with UTF-encoding, allowing more than a word into the research field.
+It also replaces blank spaces with UTF-encoding(replacing them with `%20`), allowing more than a word to be entered into the research field.
 
-A "multiple" request is answered with a JSONArray object: We can now loop through it to get the single elements. We can now use them to construct Movie's instances.
+A request for multiple items is  with a JSONArray object: We can now loop through it to get the single elements.
 
 ##
 
@@ -120,4 +119,10 @@ public FullMovie fullMovieRequest(String imdbID){
     }
 
 ```
-This is the last instance method of the class. Instead of `s=[title]` appends to `requestString` the `i=[imdbID]` parameter
+This is the last instance method of the class. Instead of `s=[title]` appends to `requestString` the `i=[imdbID]` parameter. Searching by imdbID returns a single film together with further details.
+
+##
+
+### Jump to next section -> [4-Controllers](4-Controllers.md)
+
+##
