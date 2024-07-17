@@ -16,50 +16,53 @@ import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
+/**
+ * Class that handles the Http requests to the OMDb's API.
+ * */
+
 public class HttpHandler {
 
-    /**
-        Comments need to be revised and rewritten according to Javadoc standard.
-        This class provides a controller to handle the connection to the OMDb API.
-        public String requestString = "http://www.omdbapi.com/?apikey=[" + myKey + "]&";
-     */
-
-    String APIkey = "";
-    StringBuilder requestString = new StringBuilder("https://www.omdbapi.com/?");
+    /** the key used to authenticate the user. */
+    String APIkey;
+    /** the string used to build the URI. */
+    StringBuilder requestString;
+    /** the HttpClient object used to send the request. */
     HttpClient client;
+    /** the HttpRequest object used to build the request. */
     HttpRequest request;
+    /** the HttpResponse object used to store the response. */
     HttpResponse<String> response;
 
     /**
-     * @param APIkey
      * Constructor for the HttpHandler class.
      * Initialize the HttpClient object.
      * Takes an API key as a parameter, then creates the request string according to the argument.
+     * @param APIkey the key used to authenticate the user
      */
-
     public HttpHandler(String APIkey) {
+        this.requestString = new StringBuilder("https://www.omdbapi.com/?");
         try {
             this.client = HttpClient.newHttpClient();
         } catch (UncheckedIOException UIOe) {
             System.out.println("Error: " + UIOe.getCause());
         }
         this.APIkey = APIkey;
-        this.requestString.append("apikey=");
-        this.requestString.append(this.APIkey);
-        this.requestString.append("&");
+        this.requestString.append("apikey=").append(this.APIkey).append("&");
     }
 
-    /*
-    * Resets the request string to the initial state: https://www.omdbapi.com/?apikey=APIKey
-    * */
+    /**
+     * Resets the request string to the initial state: <a href="https://www.omdbapi.com/?apikey=APIKey">...</a>
+     * */
     public void resetRequestString(){
         this.requestString = new StringBuilder("https://www.omdbapi.com/?").append("apikey=").append(this.APIkey).append("&");
     }
 
     /**
      * This method creates the connection with the OMDb's API, by sending a Http request.
-     * It could be overloaded accordingly to the parameters.
-     * that should be used to filter the data.
+     * The response is stored in the response attribute.
+     * The request is built using the requestString attribute. <br>
+     * The response is parsed to a JSONObject instance and returned.
+     * If an exception occurs, the error is printed and the method returns null.
      * @return the response result as a JSONObject instance
      */
     public JSONObject submitRequest()  {
@@ -72,62 +75,84 @@ public class HttpHandler {
             System.out.println("Error: " + e.getCause());
         }
         finally {
-            resetRequestString();     //Every time a request is sent either correctly or wrongly, it resets URI string for future requests
+            resetRequestString();
         }
         return (JSONObject) JSONValue.parse(response.body());
     }
 
     /**
+     * This method is used to retrieve a list of movies based on a filter.
+     * The method builds the URI with the filter string.
+     * The response is parsed to a JSONObject instance and returned.
+     * If an exception occurs, the error is printed and the method returns an empty list.
      * @param filter is the string used to perform the searching
-     * @return a list of JSONObject instances representing the movies targeted by the filter
+     * @return a list of Movie instances representing the movies targeted by the filter(obtained from the API)
      */
     public ArrayList<Movie> filteredRequest(String filter){
         ArrayList<Movie> result = new ArrayList<Movie>();
-        //Add the filter to the request string
         this.requestString.append("s=").append(URLEncoder.encode(filter, StandardCharsets.UTF_8).replace("+", "%20"));
-        //Send the request, the return is the JSON containing a list of JSON
         JSONObject returnedJson = submitRequest();
-
-        //check if at least a film was found (response == True)
         if(returnedJson.get("Response").equals("True")){
-            //Get the JSONArray of movies from the JSONObject
             JSONArray JS0Nlist = (JSONArray) returnedJson.get("Search");
             result = new ArrayList<Movie>();
             for (Object o : JS0Nlist) {
-                //Get a single JSONObject from the JSONArray
                 JSONObject movieJson = (JSONObject) o;
-                //Add a new movie that sets its attributes from the JSONObject values
                 result.add(new Movie(movieJson));
             }
         }
         return result;
     }
 
+    /**
+     * This method is used to retrieve the full data of a single movie.
+     * The method builds the URI with the imdbID of the movie.
+     * The response is parsed to a JSONObject instance and returned.
+     * If an exception occurs, the error is printed and the method returns null.
+     * @param imdbID is the unique identifier of the movie
+     * @return a FullMovie object with all the data of the movie
+     */
     public FullMovie fullMovieRequest(String imdbID){
-        //Add the id to the request string to retreive the full movie data
         this.requestString.append("i=").append(imdbID);
-        //Send the request with the URI built: receives a JSON with the full data
         JSONObject returnedJson = submitRequest();
-        //Return new anonymous FullMovie object -> will be displayed on alert pop up
         return new FullMovie(returnedJson);
-        //URI reset performed by submitRequest();
     }
+
+    /**
+     * Gets the requestString attribute.
+     * @return the request string
+     */
     public StringBuilder getRequestString() {
         return requestString;
     }
 
+    /**
+     * Gets the HttpClient object.
+     * @return the HttpClient object
+     */
     public HttpClient getClient() {
         return client;
     }
 
+    /**
+     * Gets the HttpRequest object.
+     * @return the HttpRequest object
+     */
     public HttpRequest getRequest() {
         return request;
     }
 
+    /**
+     * Gets the HttpResponse object.
+     * @return the HttpResponse object
+     */
     public HttpResponse<String> getResponse() {
         return response;
     }
 
+    /**
+     * Overrides the toString method to print the attributes of the class.
+     * @return a string with the attributes of the class
+     */
     @Override
     public String toString() {
         return "HttpHandler{" +

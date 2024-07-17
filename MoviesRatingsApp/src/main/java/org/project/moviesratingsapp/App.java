@@ -9,26 +9,19 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
+/**
+ * The main class of the application.
+ * The class extends the Application class and overrides the start method.
+ */
 public class App extends Application {
 
+    /**
+     * The start method loads the FXML file and sets the scene.
+     * @param stage the Stage object that contains the scene
+     * @throws IOException if the FXML file is not found
+     * */
     @Override
     public void start(Stage stage) throws IOException {
-
-        /* API key: feb7be56 */
-
-        /* setting up the object that will handle the HttpRequest */
-        // HttpHandler handler = new HttpHandler("feb7be56");
-
-        /* setting up the HttpRequest */
-        // Movie movieData = new Movie(handler.request());
-
-        /**
-         * Resources:
-         * Switch scene: https://www.youtube.com/watch?v=hcM-R-YOKkQ
-         * FilteredList: https://www.youtube.com/watch?v=3eR6csDU438&ab_channel=Chewy
-
-         */
-
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("movies-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 900, 600);
         stage.setTitle("Movies Ratings App");
