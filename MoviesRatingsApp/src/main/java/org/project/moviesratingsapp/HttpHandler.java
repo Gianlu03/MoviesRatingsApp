@@ -82,7 +82,7 @@ public class HttpHandler {
 
     /**
      * This method is used to retrieve a list of movies based on a filter.
-     * The method builds the URI with the filter string.
+     * The method builds the URI with the filter string.<br>
      * The response is parsed to a JSONObject instance and returned.
      * If an exception occurs, the error is printed and the method returns an empty list.
      * @param filter is the string used to perform the searching
@@ -105,7 +105,7 @@ public class HttpHandler {
 
     /**
      * This method is used to retrieve the full data of a single movie.
-     * The method builds the URI with the imdbID of the movie.
+     * The method builds the URI with the imdbID of the movie.<br>
      * The response is parsed to a JSONObject instance and returned.
      * If an exception occurs, the error is printed and the method returns null.
      * @param imdbID is the unique identifier of the movie
