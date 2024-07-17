@@ -35,7 +35,7 @@ public class HttpHandler {
 
     /**
      * Constructor for the HttpHandler class.
-     * Initialize the HttpClient object.
+     * Initialize the HttpClient object.<br>
      * Takes an API key as a parameter, then creates the request string according to the argument.
      * @param APIkey the key used to authenticate the user
      */
