@@ -14,7 +14,7 @@ Let's see the definition of this class:
 ```
 
 * `APIkey`: the APIkey used to access the database(set by the constructor). 
-* `requestString`: a String containing the HTTP request we are building step by step and getting ready to send
+* `requestString`: a String containing the HTTP request we build step by step and getting ready to send
 * `HttpClient`, `HttpRequest` `HttpResponse` are three elements of the http package, all of them are used to prepare the connection, send a request and receive the response from a URL.
 
 ##
@@ -23,20 +23,23 @@ Let us take a look to the constructor, it only takes the APIkey as parameter:
 
 ```java
 public HttpHandler(String APIkey) {
-    try {
-        this.client = HttpClient.newHttpClient();      //prepare Http client: this will send the request later
-    } catch (UncheckedIOException UIOe) {              //check for exceptions
-        System.out.println("Error: " + UIOe.getCause());
+        this.requestString = new StringBuilder("https://www.omdbapi.com/?");
+        try {
+            this.client = HttpClient.newHttpClient();
+        } catch (UncheckedIOException UIOe) {
+            System.out.println("Error: " + UIOe.getCause());
+        }
+        this.APIkey = APIkey;
+        this.requestString.append("apikey=").append(this.APIkey).append("&");
     }
-    this.APIkey = APIkey;  
-    this.requestString.append("apikey=");        //we append to the request URL the APIkey field
-    this.requestString.append(this.APIkey);
-    this.requestString.append("&");              //the & allows to append further parameters to the request
 }
 ```
+This prepare the basis of the requestString, appending the apikey to the OMDb site
 ##
 
-Here are the methods used to send a request(works for both simple and detailed requests):
+Here follow the methods used to send a request(works for both multiple and single(detailed) requests):
+
+##
 
 `resetRequestString`
 ```java
@@ -83,20 +86,15 @@ Now we can discuss the way we prepare the 2 kind of requests:
 ```java
 public ArrayList<Movie> filteredRequest(String filter){
         ArrayList<Movie> result = new ArrayList<Movie>();  
-        //Add the filter to the request string
         this.requestString.append("s=").append(URLEncoder.encode(filter, StandardCharsets.UTF_8).replace("+", "%20"));
 
-        JSONObject returnedJson = submitRequest(); //send the request -> receive a JSONObject
+        JSONObject returnedJson = submitRequest(); //SUBMIT THE REQUEST
 
-        //check if at least a film was found (response == True)
         if(returnedJson.get("Response").equals("True")){
-            //Get the JSONArray of movies from the JSONObject
             JSONArray JS0Nlist = (JSONArray) returnedJson.get("Search");
             result = new ArrayList<Movie>();
             for (Object o : JS0Nlist) {
-                //Get a single JSONObject from the JSONArray
                 JSONObject movieJson = (JSONObject) o;
-                //Add a new movie that sets its attributes from the JSONObject values
                 result.add(new Movie(movieJson));
             }
         }
@@ -104,5 +102,22 @@ public ArrayList<Movie> filteredRequest(String filter){
     }
 ```
 
-`filteredRequest(String filter)` prepares a requestString with the `s=title` parameter, this asks for multiple films that match with it. A multiple response sends an array of JSONObjects, we can store it into a JSONArray.
-We can now loop through this JSONArray and add elements to our List using the JSONObjects as parameter of our constructors.
+`filteredRequest(String filter)` prepares a requestString with the `s=title` parameter, this kind of request receives more than one film that match with the parameter. 
+
+It also replaces blank spaces with UTF-encoding, allowing more than a word into the research field.
+
+A "multiple" request is answered with a JSONArray object: We can now loop through it to get the single elements. We can now use them to construct Movie's instances.
+
+##
+
+`fullMovieRequest`
+
+```java
+public FullMovie fullMovieRequest(String imdbID){
+        this.requestString.append("i=").append(imdbID);
+        JSONObject returnedJson = submitRequest();
+        return new FullMovie(returnedJson);
+    }
+
+```
+This is the last instance method of the class. Instead of `s=[title]` appends to `requestString` the `i=[imdbID]` parameter
