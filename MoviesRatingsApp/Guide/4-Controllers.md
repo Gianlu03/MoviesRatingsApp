@@ -43,8 +43,6 @@ The movies stored in the observable list are shown in the table.
 
 Let us now discuss the Initialize Method.
 
-<br>
-
 >### <i>The initialize method is automatically called after the FXML elements are loaded, but before the UI is displayed. It is commonly used to setup initial values or properties components, establish data structures, and add listeners to components.</i>
 
 <br>
