@@ -131,9 +131,10 @@ Let us take a deeper look to the the lambdas.
 If the trimmed filter string is empty, nothing happens, since a return statement is executed.
 Otherwise, this event causes the application to send a simple string-filtered request by title to the OMDb database. <br/>
 
-It returns an ArrayList of JSON Objects, then parsed to an ArrayList of Movies (through the HTTP handler) and then it fills the Observable List, displaying the data in the table.
-In the case the list is empty, thus the filter did not match any movie, an Alert object is istantiated using the `getAlert()` utility method and the table is disabled (not clickable anymore).
+It returns a `JSONArray`, then parsed to an ArrayList of Movies (through the HTTP handler) and then it fills the Observable List, displaying the data in the table.
+In the case the list is empty, thus the filter did not match any movie, an `Alert` object is istantiated using the `getAlert()` utility method and the table is disabled (not clickable anymore).
 <br/>
+
 ```java
 private Alert getAlert(String title, String header, String content){
     // Creating the alert!
