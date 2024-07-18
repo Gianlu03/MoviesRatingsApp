@@ -2,7 +2,30 @@
 The most complex part of our code is the definition of the HTTP Handler class.
 Here we define how we interact with the database.
 
-Let's see the definition of this class:
+Let's see the UML of this class:
+
+```mermaid
+classDiagram
+    class `HttpHandler`
+    HttpHandler : ~ String APIkey
+    HttpHandler : ~ StringBuilder requestString
+    HttpHandler : ~ HttpClient client
+    HttpHandler : ~ HttpRequest request
+    HttpHandler : ~ HttpResponse<String> response
+
+    HttpHandler : ~ HttpHandler(String APIkey)
+    HttpHandler : ~ resetRequestString()
+    HttpHandler : ~ submitRequest() JSONObject
+    HttpHandler : ~ filteredRequest(String filter)
+    HttpHandler : ~ fullMovieRequest(String imdbID) FullMovie
+    HttpHandler : ~ getRequestString() String
+    HttpHandler : ~ getClient() HttpClient
+    HttpHandler : ~ getRequest() HttpRequest
+    HttpHandler : ~ getResponse() HttpResponse<String>
+    HttpHandler : ~ toString() String
+```
+
+then the Java definition:
 
 ```java
     public class HttpHandler {
@@ -76,7 +99,7 @@ public JSONObject submitRequest()  {
 At the end of each request method, we use `submitRequest()` to send the accomplished request to OMDb. We check for the possible exceptions while the `HttpClinet` object sends the request.
 Every time the `try` block is executed, the `finally` block resets `requestString` thanks to `resetRequestString()`.
 
-In the end, we return a JSONObject parsing the body of the response obtained. Now we are able to potentially fetch the retrieved data into the Graphical User Interface, as we will see better in 4-Controllers(link);
+In the end, we return a JSONObject parsing the body of the response obtained. Now we are able to potentially fetch the retrieved data into the Graphical User Interface, as we will see better in [4-Controllers](4-Controllers.md);
 
 ---
 
