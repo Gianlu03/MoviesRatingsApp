@@ -22,7 +22,7 @@ The movies' information are retrieved through the OMDb API, a RESTful web servic
 
 <br/>
 
-See our [guide](MoviesRatingsApp/guide/0-Idea.md) to discover how we reached our goal and understand the code better. Hope you like it!
+See our [guide](MoviesRatingsApp/Guide/0-Idea.md) to discover how we reached our goal and understand the code better. Hope you like it!
 
 # CONTRIBUTORS
 
