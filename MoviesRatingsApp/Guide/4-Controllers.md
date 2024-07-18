@@ -1,15 +1,16 @@
 # 4-CONTROLLERS 🎮
 
-The heart of the projects are the controllers.
+The heart of the projec are the controllers.
 Controllers are used as intermediary between the user interface and the application features.
-Each controller is associated to the fxml file that implements the graphics.
-The fxml files have been created using the [SceneBuilder tool.](https://gluonhq.com/products/scene-builder/)
+Each controller is associated to the FXML file that implements the graphics.
+The FXML files have been created using the [SceneBuilder tool.](https://gluonhq.com/products/scene-builder/)
 
 As we have already covered, there are two possible kind of request. 
 For each type of request, there is a different way to visualize the data.
 
-In the case of the simple filtered request (by string), the movies are displayed through a table.
-The controller related to this window must handle the textfield that allows the user to enter the title, and the button that sends the request. Let's take a look at the `MovieController` first.
+In the case of the simple filtered request (by string), the movies are displayed through a table.<br/>
+The controller related to this window must handle the textfield that allows the user to enter the title, and the button that sends the request.<br/> 
+Let's take a look at the `MovieController` first.
 
 Here is the UML of the class:
 
@@ -30,7 +31,7 @@ classDiagram
     MovieController : +  initialize(URL url, ResourceBundle resourceBundle)
 ```
 
-The attributes model the graphical elements in the window (stage) associated to the controller.
+The attributes model the graphical elements in the window (stage) associated to the controller.<br/>
 In this case the FXML file is `movie-view.fxml`.
 
 The `HttpHandler handler` attribute is used to set up an instance of the [HTTP handler](3-HttpHandler.md) class.<br/>
@@ -38,7 +39,7 @@ We will pass the API key as a parameter to its constructor.
 The instance methods of the `HttpHandler` class will be used to manage the requests that will be made by the user's events (clicking the button or clicking a table row).
 
 After a simple filtered request, which is sent when the user presses the button <b>"SEARCH"</b>,
-the `ObservableList<Movie> list` will be filled with a list of `Movie` objects, that are retrieved from the JSON response using the `handler` attribute and the `Movie` constructor.
+the `ObservableList<Movie> list` will be filled with a list of `Movie` objects, that are retrieved from the JSON response using the `handler` attribute and the `Movie` constructor.<br/>
 The movies stored in the observable list are shown in the table.
 
 Let us now discuss the Initialize Method.
@@ -217,7 +218,7 @@ the `MovieDetailController` needs the data from the `FullMovie` object that has 
 ```
 
 In conclusion, we call the `controller.fill()`, a `MovieDetailController` instance method to fill the
-new stage textfields.
+new stage's textfields.
 
 ```java
             controller.fill(requestedMovie); 

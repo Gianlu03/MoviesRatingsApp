@@ -48,21 +48,21 @@ classDiagram
     FullMovie : + toString() String
 ```
 
-Translated into Java language, the definition of the classes is the following(methods are momentarily neglected):
+Translated into Java language, the definition of the classes is the following (methods are momentarily neglected):
 
 * `Movie`
 
 ```java
 public class Movie {
-    /** the movie's title. */
+    /** The movie's title. */
     public String title = "N/A";
-    /** the movie's year. */
+    /** The movie's year. */
     public String year = "N/A";
-    /** the movie's identifier. */
+    /** The movie's identifier. */
     public String imdbID = "N/A";
-    /** the movie's type. */
+    /** The movie's type. */
     public String type = "N/A";
-    /** the movie's poster. */
+    /** The movie's poster. */
     public String poster = "N/A";
 }
 ```
@@ -93,12 +93,12 @@ public final class Fullmovie extends Movie{
 
 The division into two classes is due to the fact that the quantity of information retrieved depends on the query parameter.
 
-Therefore, the `Movie` class models the movie objects retrieved from a simple request filtered by a string, which returns a list of movies whose titles contain the string. It provides only essential information for each Movie (`title`, `year`, `type`,`imdbID` and `poster`).
+Therefore, the `Movie` class models the movie objects retrieved from a simple request filtered by a string, which returns a list of movies whose titles contain the string. It provides only essential information for each movie (`title`, `year`, `type`,`imdbID` and `poster`).
 The `FullMovie` class models the FullMovie object retrieved from a detailed request, filtered by the movie's imdbID. This request returns a single FullMovie Object, with several additional fields.
 
 ---
 
-We will not waste any time talking about setters, getters and toString(), you can easily generate them through your IDE.
+We will not waste any time talking about setters, getters and toString(), you can easily generate them through your IDE.<br/>
 What is worth to discuss about are the constructors.
 Since OMDb responds to our HTTP requests with JSON objects, we need something to "unwrap" the information received.
 Here it comes the help of `json.simple` class to easily obtain information from a `JSON object`.
@@ -138,7 +138,7 @@ public FullMovie(JSONObject decodedJson){
 ```
 The `FullMovie` constructor works the same as the `Movie` constructor, but it also needs to check the response field.
 
-The Movie constructor does not check a response variable because a Movie is always retrieved from a simple filtered request for multiple items. Thus, the boolean value is checked in `HttpHandler.filteredRequest()` method, as we will see in the next section.
+The Movie constructor does not check the response status because a `Movie` is always retrieved from a simple filtered request for multiple items. Thus, the boolean value is checked in `HttpHandler.filteredRequest()` method, as we will see in the next section.
 
 ---
 

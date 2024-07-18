@@ -15,11 +15,11 @@ Let's see the definition of this class:
 
 * `APIkey`: the API key used to access the database (set by the constructor) 
 * `requestString`: a `String` containing the HTTP request URL that is built step by step
-* `HttpClient`, `HttpRequest` `HttpResponse` are three elements of the http package, all of them are used to prepare the connection, send a request and receive the response from the API
+* `HttpClient`, `HttpRequest` `HttpResponse` are three elements of the HTTP package, all of them are used to prepare the connection, send a request and receive the response from the API
 
 ---
 
-Let's now take a look to the constructor, it only takes the APIkey as parameter:
+Let's now take a look to the constructor, it only takes the API key as parameter:
 
 ```java
 public HttpHandler(String APIkey) {
@@ -48,7 +48,7 @@ public void resetRequestString(){
 ```
 
 It resets the URL to its original form: link to the site followed by the API key. 
-We use this method after every request is succesfully sent, to reset the `requestString` attribute
+We use this method after every request is succesfully sent to reset the `requestString` attribute
 to its original value.
 
 ---
@@ -74,7 +74,7 @@ public JSONObject submitRequest()  {
 
 ```
 At the end of each request method, we use `submitRequest()` to send the accomplished request to OMDb. We check for the possible exceptions while the `HttpClinet` object sends the request.
-Every time the `try` block executes, the `finally` block resets `requestString` thanks to `resetRequestString()`.
+Every time the `try` block is executed, the `finally` block resets `requestString` thanks to `resetRequestString()`.
 
 In the end, we return a JSONObject parsing the body of the response obtained. Now we are able to potentially fetch the retrieved data into the Graphical User Interface, as we will see better in 4-Controllers(link);
 
@@ -109,7 +109,7 @@ public ArrayList<Movie> filteredRequest(String filter){
 
 It also replaces blank spaces with UTF-encoding (replacing them with `%20`), allowing more than a word to be entered into the research field.
 
-The result of a string-filtered request for multiple items is stored in a `JSONArray` object: we can now loop through it to get the single elements.
+The result of a string-filtered request for multiple items is stored in a `JSONArray` object: we can now iterate through it to get the single elements.
 
 ---
 

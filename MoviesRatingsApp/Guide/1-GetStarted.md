@@ -11,11 +11,11 @@ Choose the “FREE! (1,000 daily limit)” option and fill the form. It is requi
 
 ![OMDBform image](images/OMDBform.png)
 
-After submitting your answers, you’ll receive an email at the provided address which contains your newly generated API Key, together with a link to activate your Key. Click on that link and we’re done.
+After submitting your answers, you’ll receive an email at the provided address which contains your newly generated API Key, together with a link to activate your key. Click on that link and we are done!
 
-## We’re now allowed to interact with the online database!
+## We are now allowed to interact with the online database!
 
-Try pasting the following link on your browser substituting `[mykey]` with the Key received by e-mail.
+Try pasting the following link on your browser substituting `[mykey]` with the key received by e-mail.
 
 `http://www.omdbapi.com/?apikey=[mykey]&t=batman`
 

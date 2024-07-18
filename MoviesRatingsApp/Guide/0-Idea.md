@@ -2,7 +2,7 @@
 
 Let us suppose you want to watch a Harry Potter's movie. Of course you do not care about the storyline, 
 you just want to see the most rated movie of the saga. Well, we are here to give you the solution!
-Our app allows you to compare the imdb Ratings and metascore's ratings of plenty of movies!
+Our app allows you to compare the imdb ratings and metascore's ratings of plenty of movies!
 
 How does it work? Let's see...
 <br/><br/>
