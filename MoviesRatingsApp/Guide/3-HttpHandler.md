@@ -124,3 +124,4 @@ This is the last instance method of the class. Instead of `s=[title]` appends to
 ---
 
 ### Jump to next section → [4-Controllers](4-Controllers.md)
+### [2-Models](2-Models.md) ← Jump to previous section

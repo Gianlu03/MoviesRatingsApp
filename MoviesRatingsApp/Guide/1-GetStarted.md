@@ -19,7 +19,18 @@ Try pasting the following link on your browser substituting `[mykey]` with the K
 
 `http://www.omdbapi.com/?apikey=[mykey]&t=batman`
 
-If everything has worked correctly, you'll see a JSON structure containing information about the film "Batman" from 1989.
+If everything has worked correctly, you will see a JSON structure containing information about the film "Batman" from 1989.
+
+## One last thing...
+
+Due to security reasons, we have decided not to share our personal OMDb API key. 
+Therefore, if you got your key by following the previous steps, you need to copy your key in the following
+constructor, located in the `MovieController.java` file (see [4-Controllers](4-Controllers.md))
+
+```java
+    private final HttpHandler handler = new HttpHandler("Write your API key here!");  
+```
+This last passage is absolutely necessary: if you skip it, the project will not work!
 
 ---
 
