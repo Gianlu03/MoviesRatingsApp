@@ -142,4 +142,5 @@ The Movie constructor does not check a response variable because a Movie is alwa
 
 ---
 
-### Jump to next section → [3-HTTPHandler](3-HttpHandler.md)
+### Jump to next section → [3-HttpHandler](3-HttpHandler.md)
+### [1-GetStarted](1-GetStarted.md) ← Jump to previous section

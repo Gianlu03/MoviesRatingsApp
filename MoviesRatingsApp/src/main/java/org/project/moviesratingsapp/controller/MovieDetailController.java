@@ -54,7 +54,7 @@ public class MovieDetailController {
      * The method takes a FullMovie object as a parameter and fills the TextFields with the respective data.
      * @param fullMovie the FullMovie object that contains the data to be displayed
      */
-    @FXML
+
     public void fill(FullMovie fullMovie) {
         this.title.setText(fullMovie.getTitle());
         this.director.setText(fullMovie.getDirector());

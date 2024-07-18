@@ -1,4 +1,4 @@
-# Get started
+# Get started🏁
 
 Such as with every other RESTful API, our program needs an API Key, an alphanumeric string that API’s developers use to filter accesses to their services.
 Let’s move to the IMDb API web page: https://www.omdbapi.com/
@@ -35,3 +35,4 @@ This last passage is absolutely necessary: if you skip it, the project will not 
 ---
 
 ### Jump to next section → [2-Models](2-Models.md)
+### [0-Idea](0-Idea.md) ← Jump to previous section
