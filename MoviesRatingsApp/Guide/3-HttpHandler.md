@@ -40,8 +40,6 @@ This prepare the basis of the requestString, appending the apikey to the OMDb si
 
 Here follow the methods used to send a request(works for both multiple and single(detailed) requests):
 
----
-
 `resetRequestString`
 ```java
 public void resetRequestString(){
