@@ -96,7 +96,7 @@ The division into two classes is due to the fact that the quantity of informatio
 Therefore, the `Movie` class models the movie objects retrieved from a simple request filtered by a string, which returns a list of movies whose titles contain the string. It provides only essential information for each Movie (`title`, `year`, `type`,`imdbID` and `poster`).
 The `FullMovie` class models the FullMovie object retrieved from a detailed request, filtered by the movie's imdbID. This request returns a single FullMovie Object, with several additional fields.
 
-##
+---
 
 We will not waste any time talking about setters, getters and toString(), you can easily generate them through your IDE.
 What is worth to discuss about are the constructors.
@@ -140,10 +140,6 @@ The `FullMovie` constructor works the same as the `Movie` constructor, but it al
 
 The Movie constructor does not check a response variable because a Movie is always retrieved from a simple filtered request for multiple items. Thus, the boolean value is checked in `HttpHandler.filteredRequest()` method, as we will see in the next section.
 
+---
 
-
-##
-
-### Jump to next section -> [3-HTTPHandler](3-HttpHandler.md)
-
-##
+### Jump to next section → [3-HTTPHandler](3-HttpHandler.md)

@@ -16,7 +16,8 @@ Let's see the definition of this class:
 * `APIkey`: the APIkey used to access the database(set by the constructor). 
 * `requestString`: a String containing the HTTP request we build step by step and getting ready to send
 * `HttpClient`, `HttpRequest` `HttpResponse` are three elements of the http package, all of them are used to prepare the connection, send a request and receive the response from a URL.
-##
+
+---
 
 Let us take a look to the constructor, it only takes the APIkey as parameter:
 
@@ -34,11 +35,12 @@ public HttpHandler(String APIkey) {
 }
 ```
 This prepare the basis of the requestString, appending the apikey to the OMDb site
-##
+
+---
 
 Here follow the methods used to send a request(works for both multiple and single(detailed) requests):
 
-##
+---
 
 `resetRequestString`
 ```java
@@ -50,7 +52,7 @@ public void resetRequestString(){
 resets the URL to its original form: link to the site followed by the APIkey. We use
 this method after every request succesfully sent.
 
-##
+---
 
 `submitRequest()`
 
@@ -77,7 +79,7 @@ Every time the `try` block executes, the `finally` block resets `requestString` 
 
 In the end, we return a JSONObject parsing the body of the response obtained. We will be able to fetch the data.
 
-## 
+---
 
 Now we can discuss the way we prepare the 2 kind of requests:
 
@@ -107,7 +109,7 @@ It also replaces blank spaces with UTF-encoding(replacing them with `%20`), allo
 
 A request for multiple items is  with a JSONArray object: We can now loop through it to get the single elements.
 
-##
+---
 
 `fullMovieRequest`
 
@@ -121,8 +123,6 @@ public FullMovie fullMovieRequest(String imdbID){
 ```
 This is the last instance method of the class. Instead of `s=[title]` appends to `requestString` the `i=[imdbID]` parameter. Searching by imdbID returns a single film together with further details.
 
-##
+---
 
-### Jump to next section -> [4-Controllers](4-Controllers.md)
-
-##
+### Jump to next section → [4-Controllers](4-Controllers.md)

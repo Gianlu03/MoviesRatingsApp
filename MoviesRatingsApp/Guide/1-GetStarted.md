@@ -21,8 +21,6 @@ Try pasting the following link on your browser substituting `[mykey]` with the K
 
 If everything has worked correctly, you'll see a JSON structure containing information about the film "Batman" from 1989.
 
-#
+---
 
-### Jump to next section -> [2-Classes](2-Classes.md)
-
-#
+### Jump to next section → [2-Models](2-Models.md)
