@@ -238,7 +238,7 @@ class `MovieDetailController`
     MovieDetailController : ~ TextField imdbRating
     MovieDetailController : ~ TextField metascore
 
-    MovieDetailController : ~ fill(FullMovie fullmovie)
+    MovieDetailController : + fill(FullMovie fullmovie)
 ```
 
 The attributes model the title and seven texfields showing the movie's details.
