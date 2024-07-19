@@ -13,16 +13,16 @@ classDiagram
     HttpHandler : ~ HttpRequest request
     HttpHandler : ~ HttpResponse<String> response
 
-    HttpHandler : ~ HttpHandler(String APIkey)
-    HttpHandler : ~ resetRequestString()
-    HttpHandler : ~ submitRequest() JSONObject
-    HttpHandler : ~ filteredRequest(String filter)
-    HttpHandler : ~ fullMovieRequest(String imdbID) FullMovie
-    HttpHandler : ~ getRequestString() String
-    HttpHandler : ~ getClient() HttpClient
-    HttpHandler : ~ getRequest() HttpRequest
-    HttpHandler : ~ getResponse() HttpResponse<String>
-    HttpHandler : ~ toString() String
+    HttpHandler : + HttpHandler(String APIkey)
+    HttpHandler : + resetRequestString()
+    HttpHandler : + submitRequest() JSONObject
+    HttpHandler : + filteredRequest(String filter)
+    HttpHandler : + fullMovieRequest(String imdbID) FullMovie
+    HttpHandler : + getRequestString() String
+    HttpHandler : + getClient() HttpClient
+    HttpHandler : + getRequest() HttpRequest
+    HttpHandler : + getResponse() HttpResponse<String>
+    HttpHandler : + toString() String
 ```
 
 then the Java definition:
