@@ -71,7 +71,7 @@ public void resetRequestString(){
 ```
 
 It resets the URL to its original form: link to the site followed by the API key. 
-We use this method after every request is succesfully sent to reset the `requestString` attribute
+We use this method after every request is successfully sent to reset the `requestString` attribute
 to its original value.
 
 ---
@@ -96,7 +96,7 @@ public JSONObject submitRequest()  {
 }
 
 ```
-At the end of each request method, we use `submitRequest()` to send the accomplished request to OMDb. We check for the possible exceptions while the `HttpClinet` object sends the request.
+At the end of each request method, we use `submitRequest()` to send the accomplished request to OMDb. We check for the possible exceptions while the `HttpClient` object sends the request.
 Every time the `try` block is executed, the `finally` block resets `requestString` thanks to `resetRequestString()`.
 
 In the end, we return a JSONObject parsing the body of the response obtained. Now we are able to potentially fetch the retrieved data into the Graphical User Interface, as we will see better in [4-Controllers](4-Controllers.md);

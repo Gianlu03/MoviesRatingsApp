@@ -99,7 +99,7 @@ The `FullMovie` class models the FullMovie object retrieved from a detailed requ
 ---
 
 We will not waste any time talking about setters, getters and toString(), you can easily generate them through your IDE.<br/>
-What is worth to discuss about are the constructors.
+What is worth to discuss are the constructors.
 Since OMDb responds to our HTTP requests with JSON objects, we need something to "unwrap" the information received.
 Here it comes the help of `json.simple` class to easily obtain information from a `JSON object`.
 
