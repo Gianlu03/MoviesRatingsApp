@@ -56,7 +56,7 @@ public class MovieController implements Initializable {
     private Button submitButton;
 
     /** The HttpHandler object that handles the API requests. */
-    private final HttpHandler handler = new HttpHandler("feb7be56");
+    private final HttpHandler handler = new HttpHandler("");
 
     /** The ObservableList object that contains the movies. */
     ObservableList<Movie> list = FXCollections.observableArrayList();
